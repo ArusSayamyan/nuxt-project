@@ -4,6 +4,10 @@
   <p> {{ product.price }}</p>
   <p> {{ product.id }}</p>
   <p> {{ product.category }}</p>
+  <button>
+    <i class="material-icons mr-2"></i>
+    <span>add to cart</span>
+  </button>
 </div>
 </template>
 

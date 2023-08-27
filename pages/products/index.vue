@@ -19,6 +19,11 @@ definePageMeta({
 
 const { data: products } = await useFetch('https://fakestoreapi.com/products')
 
+
+//for change head information for example title
+useHead({
+  title: 'Nuxt theory | Merch'
+})
 </script>
 
 <style scoped>

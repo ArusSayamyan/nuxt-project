@@ -13,9 +13,6 @@
           <li>
             <NuxtLink to="/products">PRODUCTS</NuxtLink>
           </li>
-          <li>
-            <NuxtLink to="/products/abc">PRODUCTS abc</NuxtLink>
-          </li>
         </ul>
       </nav>
     </header>
