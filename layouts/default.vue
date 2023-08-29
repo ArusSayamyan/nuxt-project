@@ -1,9 +1,9 @@
 <template>
   <div>
-    <header>
-      <nav>
-        <NuxtLink to="/">Nuxt</NuxtLink>
-        <ul>
+    <header class="shadow-sm bg-green">
+      <nav class="container mx-auto p-4 flex justify-between">
+        <NuxtLink to="/" class="font-bold uppercase">Nuxt theory</NuxtLink>
+        <ul class="flex gap-4">
           <li>
             <NuxtLink to="/">HOME</NuxtLink>
           </li>
@@ -23,12 +23,12 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 
 </script>
 
 <style scoped>
-p {
-  padding: 20px;
+.router-link-exact-active {
+  color: green;
 }
 </style>

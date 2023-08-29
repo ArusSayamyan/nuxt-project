@@ -1,9 +1,9 @@
 <template>
-<div>
-  <img :src="product.image" alt="" class="image">
-  <p>{{ product.title }}</p>
+<div class="card text-center">
+  <img :src="product.image" alt="" class="thumb">
+  <p class="font-bold text-gray-500 m-4 truncate">{{ product.title }}</p>
   <NuxtLink :to="`/products/${product.id}`">
-    <p>view details</p>
+    <p class="btn my-4">view details</p>
   </NuxtLink>
 </div>
 </template>
@@ -12,11 +12,10 @@
 const { product } = defineProps(['product']);
 </script>
 
-
-
 <style scoped>
-.image {
-  max-width: 150px;
-  width: 100%;
+.thumb {
+  max-height: 120px;
+  max-width: 70%;
+  margin: 0 auto;
 }
 </style>
