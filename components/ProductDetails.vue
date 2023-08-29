@@ -1,13 +1,21 @@
 <template>
-<div>
-  <p> {{ product.title }}</p>
-  <p> {{ product.price }}</p>
-  <p> {{ product.id }}</p>
-  <p> {{ product.category }}</p>
-  <button>
-    <i class="material-icons mr-2"></i>
-    <span>add to cart</span>
-  </button>
+<div class="card">
+  <div class="grid grid-cols-2 gap-10">
+    <div class="p-7">
+      <img :src="product.image" alt="thumb" class="mx-auto my-7">
+    </div>
+    <div class="p-7">
+      <h2 class="text-4xl my-7"> {{ product.title }}</h2>
+      <p class="text-xl my-7"> price - ${{ product.price }}</p>
+      <h3 class="font-bold border-b-2 mb-4 pb-2">product description</h3>
+      <p class="pb-7">{{ product.description }}</p>
+      <button>
+        <i class="material-icons mr-2"></i>
+        <span class="btn uppercase">add to cart</span>
+      </button>
+    </div>
+  </div>
+
 </div>
 </template>
 
@@ -16,5 +24,7 @@ const {product} = defineProps(['product'])
 </script>
 
 <style scoped>
-
+img {
+  max-width: 300px;
+}
 </style>
