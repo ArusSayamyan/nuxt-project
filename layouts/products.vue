@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-screen grid grid-rows-[auto_1fr_auto]">
     <header class="shadow-sm bg-green">
       <nav class="container mx-auto p-4 flex justify-between">
         <NuxtLink to="/" class="font-bold uppercase">Nuxt products</NuxtLink>

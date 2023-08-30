@@ -3,7 +3,7 @@
   <h1 class="text-2xl font-semibold text-center">
     PRODUCTS
   </h1>
-  <div class="grid grid-cols-4 gap-5 mt-10">
+  <div class="grid grid-cols-2 gap-5 mt-10 sm:grid-cols-3 md:grid-cols-4">
     <div v-for="p in products">
       <ProductCard :product="p"></ProductCard>
     </div>
