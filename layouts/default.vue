@@ -5,13 +5,13 @@
         <NuxtLink to="/" class="font-bold uppercase">Nuxt theory</NuxtLink>
         <ul class="flex gap-4">
           <li>
-            <NuxtLink to="/">HOME</NuxtLink>
+            <NuxtLink to="/" class="hover:text-purple-800">HOME</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about">ABOUT</NuxtLink>
+            <NuxtLink to="/about" class="hover:text-purple-800">ABOUT</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/products">PRODUCTS</NuxtLink>
+            <NuxtLink to="/products" class="hover:text-purple-800">PRODUCTS</NuxtLink>
           </li>
         </ul>
       </nav>
