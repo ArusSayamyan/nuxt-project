@@ -7,7 +7,6 @@
 
 <script setup>
 const { category } = useRoute().params;
-let filteredProds = [];
 const url = 'https://fakestoreapi.com/products'
 
 //fetch the products
@@ -17,12 +16,25 @@ if (!product.value) {
   throw createError({statusCode: 404, statusMessage: 'Product not found', fatal: true})
 }
 
-filteredProds = product.value.filter(prod => {
-  return prod.category === category;
+
+//FILTER PRODUCTS WITH CATEGORIES
+const filteredProds = computed(() => {
+  return product.value.filter(prod => {
+    return prod.category === category;
+  })
 })
 
 definePageMeta({
-  layout: 'products'
+  layout: 'products',
+})
+
+
+//CHANGE TITLE OF PAGE
+useHead({
+  titleTemplate: (titleChunk) => {
+    titleChunk = category
+    return titleChunk ? `${titleChunk} - Site Title` : 'Site Title';
+  }
 })
 </script>
 

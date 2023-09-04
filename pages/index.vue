@@ -1,22 +1,44 @@
 <template>
+  <head>
+    <Title>Home page</Title>
+  </head>
 <div class="container p-4 mx-auto text">
-  <h2 class="text-2xl font-semibold mb-5">HOME</h2>
-  <div class="h-96 container flex justify-between items-center mb-5 gap-2 flex-wrap sm:flex-wrap">
+ <div class="relative">
+   <h1 class="text-center font-mono text-6xl max-w-[816px] mx-auto mt-5">
+     Make Your <img src="~/assets/img/titleImg.png" alt="titleImg" class="inline"> <span class="text-[#FF413D]">Fashion</span> More Perfect<span class="text-[#FF413D]">.</span>
+   </h1>
+   <div class="relative max-w-[490px] mx-auto">
+   <p class="text-[#636B8A] text-center max-w-[488px] mx-auto text-[20px] mt-[12px]">With our clothing collection, you can take your style to the next level.</p>
+   <div class="absolute left-20 top-20">
+     <img src="~/assets/img/arrow.svg" alt="">
+   </div>
+   <MainBtn>
+     <p class="btn my-4 max-w-[120px] text-center bg-[#FF413D] mx-auto mt-[65px]">Shop Now</p>
+   </MainBtn>
+   </div>
+   <div class="absolute left-0 top-[120px]">
+     <img src="~/assets/img/img1.png" alt="">
+   </div>
+   <div class="absolute right-0 top-20">
+     <img src="~/assets/img/img2.png" alt="">
+   </div>
+ </div>
+  <div class="h-50 container flex justify-between items-center mb-5 gap-2 flex-wrap sm:flex-wrap pt-[150px]">
+    <p class="font-mono text-[20px] capitalize">exclusive collection</p>
     <NuxtLink v-for="category in filteredArray" :key="category" :to="`/${category.category}`"  class="basis-2/5  relative h-full md:basis-1/5">
-    <div>
-      <span class="text-center absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10 h-full w-full  text-white bg-slate-800/50 flex justify-center items-center text-[28px]">{{ category.category.toUpperCase() }}</span>
-      <img :src="category.image" alt="image" class="p-5 absolute max-h-full top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-    </div>
+      <div class="h-[250px] relative flex justify-end flex-col">
+        <img :src="category.image" alt="image" class="p-5 h-full right-0 absolute z-10">
+        <div class="h-32 bg-blue-400 box-border p-[15px] absolute w-full">
+          <p class="text-white">{{ category.price }}$</p>
+        </div>
+      </div>
     </NuxtLink>
   </div>
-  <p class="pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam consectetur cum eveniet ex facere maxime nemo numquam optio voluptas?</p>
-  <p class="pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi autem cupiditate delectus deserunt in inventore odit recusandae repellendus tempore.</p>
 </div>
 </template>
 
 <script setup>
 const { product } = defineProps(['product']);
-
 const { data: products } = await useFetch('https://fakestoreapi.com/products')
 const addedCategories = {};
 
@@ -33,4 +55,5 @@ for (const item of products.value) {
 </script>
 
 <style scoped>
+
 </style>
